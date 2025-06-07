@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim
+FROM ubuntu:20.04
 
 ARG CSS_DIR
 ARG STEAMCMD_DIR
