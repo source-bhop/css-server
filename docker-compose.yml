@@ -9,15 +9,15 @@ services:
     volumes:
       - data:/home/steam/${CSS_DIR}
     ports:
-    - target: 27015
-      published: ${PORT}
-      protocol: udp
-      mode: host
+      - target: 27015
+        published: ${PORT}
+        protocol: udp
+        mode: host
 
-    - target: 27015
-      published: ${PORT}
-      protocol: tcp
-      mode: host
+      - target: 27015
+        published: ${PORT}
+        protocol: tcp
+        mode: host
     restart: unless-stopped
 
 volumes:
