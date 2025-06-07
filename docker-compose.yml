@@ -1,0 +1,17 @@
+services:
+  css-server:
+    build:
+      context: .
+      args:
+        DOWNLOAD_BUNDLE_URL: ${DOWNLOAD_BUNDLE_URL}
+        CSS_DIR: ${CSS_DIR}
+        STEAMCMD_DIR: ${STEAMCMD_DIR}
+    volumes:
+      - data:/home/steam/${CSS_DIR}
+    ports:
+      - "${PORT}:27015/udp"
+      - "${PORT}:27015"
+    restart: unless-stopped
+
+volumes:
+  data:
