@@ -25,8 +25,8 @@ RUN mkdir -p $_STEAMCMD_DIR && \
     curl -sL https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz | tar -xzv
 
 # fix: /home/steam/.steam/sdk32/steamclient.so: cannot open shared object file: No such file or directory
-RUN mkdir -p /home/$_STEAMCMD_DIR/.steam/sdk32 && \
-    cp "$STEAMCMD_DIR/linux32/steamclient.so" /home/$_STEAMCMD_DIR/.steam/sdk32/steamclient.so
+RUN mkdir -p $_STEAMCMD_DIR/.steam/sdk32 && \
+    cp "$STEAMCMD_DIR/linux32/steamclient.so" $_STEAMCMD_DIR/.steam/sdk32/steamclient.so
 
 # CSS
 RUN mkdir -p $_CSS_DIR && \
