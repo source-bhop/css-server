@@ -3,6 +3,11 @@ FROM ubuntu:20.04
 ARG CSS_DIR
 ARG STEAMCMD_DIR
 
+ENV _CSS_DIR=$CSS_DIR
+ENV _STEAMCMD_DIR=$STEAMCMD_DIR
+ENV TZ=Europe/Moscow
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN dpkg --add-architecture i386 && \
     apt update && \
     apt install -y \
@@ -16,10 +21,6 @@ RUN dpkg --add-architecture i386 && \
     ln -snf /usr/share/zoneinfo/Europe/Moscow /etc/localtime && \
     echo "Europe/Moscow" > /etc/timezone && \
     useradd -m steam
-
-ENV _CSS_DIR=$CSS_DIR
-ENV _STEAMCMD_DIR=$STEAMCMD_DIR
-ENV TZ=Europe/Moscow
 
 # steamcmd
 RUN mkdir -p $_STEAMCMD_DIR && \
