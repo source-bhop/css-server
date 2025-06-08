@@ -7,9 +7,9 @@ services:
         CSS_DIR: ${CSS_DIR}
         STEAMCMD_DIR: ${STEAMCMD_DIR}
     volumes:
-      - data: ${CSS_DIR}
+      - server_data: ${CSS_DIR}
     restart: unless-stopped
     network_mode: host
 
 volumes:
-  data:
+  server_data:
