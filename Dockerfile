@@ -26,7 +26,7 @@ RUN mkdir -p $_STEAMCMD_DIR && \
 
 # fix: /home/steam/.steam/sdk32/steamclient.so: cannot open shared object file: No such file or directory
 RUN mkdir -p $_STEAMCMD_DIR/.steam/sdk32 && \
-    cp "$STEAMCMD_DIR/linux32/steamclient.so" $_STEAMCMD_DIR/.steam/sdk32/steamclient.so
+    cp $_STEAMCMD_DIR/linux32/steamclient.so $_STEAMCMD_DIR/.steam/sdk32/steamclient.so
 
 # CSS
 RUN mkdir -p $_CSS_DIR && \
