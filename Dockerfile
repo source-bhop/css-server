@@ -13,6 +13,8 @@ RUN dpkg --add-architecture i386 && \
         unzip \
         tzdata \
         wget && \
+    ln -snf /usr/share/zoneinfo/Europe/Moscow /etc/localtime && \
+    echo "Europe/Moscow" > /etc/timezone && \
     useradd -m steam
 
 ENV _CSS_DIR=$CSS_DIR
