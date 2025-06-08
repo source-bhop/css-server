@@ -36,8 +36,8 @@ RUN chmod +x /startup.sh && chown -R steam:steam $_CSS_DIR $_STEAMCMD_DIR
 USER steam
 
 # fix: /home/steam/.steam/sdk32/steamclient.so: cannot open shared object file: No such file or directory
-RUN mkdir -p $_STEAMCMD_DIR/.steam/sdk32 && \
-    cp $_STEAMCMD_DIR/linux32/steamclient.so $_STEAMCMD_DIR/.steam/sdk32/steamclient.so
+RUN mkdir -p /home/steam/.steam/sdk32 && \
+    cp $_STEAMCMD_DIR/linux32/steamclient.so /home/steam/.steam/sdk32/steamclient.so
 
 WORKDIR ${_CSS_DIR}
 
